@@ -1,6 +1,5 @@
 
-import React, { useEffect } from "react";
-import { motion } from "framer-motion";
+import { useEffect } from "react";
 import Hero from "@/components/Hero";
 import MovieSection from "@/components/MovieSection";
 import FeaturedSection from "@/components/FeaturedSection";
@@ -13,33 +12,8 @@ const HomePage = () => {
     document.title = "Cinephile | Home";
   }, []);
 
-  const pageVariants = {
-    initial: {
-      opacity: 0,
-    },
-    in: {
-      opacity: 1,
-      transition: {
-        duration: 0.4,
-        ease: "easeInOut",
-      },
-    },
-    out: {
-      opacity: 0,
-      transition: {
-        duration: 0.4,
-        ease: "easeInOut",
-      },
-    },
-  };
-
   return (
-    <motion.div
-      initial="initial"
-      animate="in"
-      exit="out"
-      variants={pageVariants}
-    >
+    <div>
       <Hero />
       
       <MovieSection 
@@ -73,7 +47,7 @@ const HomePage = () => {
       />
       
       <Newsletter />
-    </motion.div>
+    </div>
   );
 };
 
