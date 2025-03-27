@@ -1,11 +1,10 @@
 
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import MovieSection from "@/components/MovieSection";
-import Newsletter from "@/components/Newsletter";
 import { newReleases } from "@/data/moviesData";
 import { newTVShows } from "@/data/tvShowsData";
 
-const NewReleasesPage = () => {
+const ManagementPage = () => {
   useEffect(() => {
     document.title = "Cinephile | New Releases";
   }, []);
@@ -33,9 +32,8 @@ const NewReleasesPage = () => {
         movies={newTVShows}
       />
       
-      <Newsletter />
     </div>
   );
 };
 
-export default NewReleasesPage;
+export default ManagementPage;

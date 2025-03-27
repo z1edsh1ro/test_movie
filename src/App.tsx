@@ -1,8 +1,3 @@
-
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
@@ -10,12 +5,9 @@ import { AnimatePresence } from "framer-motion";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
-import MoviesPage from "./pages/MoviesPage";
-import TVShowsPage from "./pages/TVShowsPage";
-import NewReleasesPage from "./pages/NewReleasesPage";
 import NotFound from "./pages/NotFound";
-
-const queryClient = new QueryClient();
+import ManagementPage from "./pages/ManagementPage";
+import OrderPage from "./pages/OrderPage";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -37,9 +29,8 @@ const AppContent = () => {
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<HomePage />} />
-            <Route path="/movies" element={<MoviesPage />} />
-            <Route path="/tv-shows" element={<TVShowsPage />} />
-            <Route path="/new-releases" element={<NewReleasesPage />} />
+            <Route path="/order" element={<OrderPage />} />
+            <Route path="/mg/" element={<ManagementPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>
@@ -50,16 +41,10 @@ const AppContent = () => {
 };
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <BrowserRouter>
-        <ScrollToTop />
-        <AppContent />
-        <Toaster />
-        <Sonner />
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+  <BrowserRouter>
+    <ScrollToTop />
+    <AppContent />
+  </BrowserRouter>
 );
 
 export default App;

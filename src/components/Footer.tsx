@@ -1,12 +1,4 @@
-
-import React from "react";
 import { Link } from "react-router-dom";
-import { 
-  Facebook, 
-  Twitter, 
-  Instagram, 
-  Youtube 
-} from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -17,25 +9,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           <div>
             <Link to="/" className="inline-block mb-4">
-              <span className="font-display text-xl font-bold">Cinephile</span>
+              <span className="font-display text-xl font-bold">The movie</span>
             </Link>
             <p className="text-muted-foreground text-sm max-w-xs">
               Discover the finest selection of films and TV shows, curated for true cinema enthusiasts.
             </p>
-            <div className="flex space-x-4 mt-4">
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                <Youtube className="h-5 w-5" />
-              </a>
-            </div>
           </div>
           
           <div>
@@ -76,7 +54,7 @@ const Footer = () => {
         
         <div className="mt-12 pt-8 border-t border-border">
           <p className="text-center text-sm text-muted-foreground">
-            © {currentYear} Cinephile. All rights reserved.
+            © {currentYear} The movie. All rights reserved.
           </p>
         </div>
       </div>

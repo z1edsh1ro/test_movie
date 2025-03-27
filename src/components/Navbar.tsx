@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Search, Menu, X } from "lucide-react";
@@ -24,9 +24,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "Movies", path: "/movies" },
-    { name: "TV Shows", path: "/tv-shows" },
-    { name: "New Releases", path: "/new-releases" },
+    { name: "Order", path: "/order" },
   ];
 
   return (
@@ -38,7 +36,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link to="/" className="flex items-center space-x-2">
-            <span className="font-display text-xl md:text-2xl font-bold">Cinephile</span>
+            <span className="font-display text-xl md:text-2xl font-bold">The movie</span>
           </Link>
 
           {/* Desktop Navigation */}

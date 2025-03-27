@@ -1,10 +1,9 @@
 
 import React, { useEffect } from "react";
 import MovieSection from "@/components/MovieSection";
-import Newsletter from "@/components/Newsletter";
 import { popularTVShows, newTVShows, topRatedTVShows } from "@/data/tvShowsData";
 
-const TVShowsPage = () => {
+const OrderPage = () => {
   useEffect(() => {
     document.title = "Cinephile | TV Shows";
   }, []);
@@ -35,11 +34,9 @@ const TVShowsPage = () => {
       <MovieSection 
         title="Top Rated Series"
         movies={topRatedTVShows}
-      />
-      
-      <Newsletter />
+      />      
     </div>
   );
 };
 
-export default TVShowsPage;
+export default OrderPage;

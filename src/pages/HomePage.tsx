@@ -2,8 +2,6 @@
 import { useEffect } from "react";
 import Hero from "@/components/Hero";
 import MovieSection from "@/components/MovieSection";
-import FeaturedSection from "@/components/FeaturedSection";
-import Newsletter from "@/components/Newsletter";
 import { featuredMovies, trendingMovies, newReleases } from "@/data/moviesData";
 import { popularTVShows } from "@/data/tvShowsData";
 
@@ -22,9 +20,7 @@ const HomePage = () => {
         movies={featuredMovies}
         link="/movies"
       />
-      
-      <FeaturedSection />
-      
+            
       <MovieSection 
         title="Trending Now"
         description="Popular movies this week"
@@ -46,7 +42,6 @@ const HomePage = () => {
         link="/tv-shows"
       />
       
-      <Newsletter />
     </div>
   );
 };
