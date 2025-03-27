@@ -2,7 +2,6 @@
 import { useEffect } from "react";
 import MovieSection from "@/components/MovieSection";
 import { newReleases } from "@/data/moviesData";
-import { newTVShows } from "@/data/tvShowsData";
 
 const ManagementPage = () => {
   useEffect(() => {
@@ -25,11 +24,6 @@ const ManagementPage = () => {
       <MovieSection 
         title="New Movies"
         movies={newReleases}
-      />
-      
-      <MovieSection 
-        title="New TV Shows"
-        movies={newTVShows}
       />
       
     </div>

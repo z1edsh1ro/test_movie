@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import Hero from "@/components/Hero";
 import MovieSection from "@/components/MovieSection";
 import { featuredMovies, trendingMovies, newReleases } from "@/data/moviesData";
-import { popularTVShows } from "@/data/tvShowsData";
 
 const HomePage = () => {
   useEffect(() => {
@@ -33,13 +32,6 @@ const HomePage = () => {
         description="The latest movies added to our collection"
         movies={newReleases}
         link="/new-releases"
-      />
-      
-      <MovieSection 
-        title="Popular TV Shows"
-        description="Top-rated series to binge watch"
-        movies={popularTVShows}
-        link="/tv-shows"
       />
       
     </div>

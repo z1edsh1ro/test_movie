@@ -1,7 +1,6 @@
 
 import React, { useEffect } from "react";
 import MovieSection from "@/components/MovieSection";
-import { popularTVShows, newTVShows, topRatedTVShows } from "@/data/tvShowsData";
 
 const OrderPage = () => {
   useEffect(() => {
@@ -20,21 +19,7 @@ const OrderPage = () => {
           </p>
         </div>
       </div>
-      
-      <MovieSection 
-        title="Popular TV Shows"
-        movies={popularTVShows}
-      />
-      
-      <MovieSection 
-        title="New & Upcoming"
-        movies={newTVShows}
-      />
-      
-      <MovieSection 
-        title="Top Rated Series"
-        movies={topRatedTVShows}
-      />      
+       
     </div>
   );
 };
