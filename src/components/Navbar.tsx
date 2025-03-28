@@ -10,7 +10,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "Order", path: "/order" },
+    { name: "Cart", path: "/cart" },
   ];
 
   return (
@@ -38,11 +38,6 @@ const Navbar = () => {
           </nav>
 
           <div className="flex items-center space-x-4">
-            <Button variant="ghost" size="icon" className="relative">
-              <Search className="h-5 w-5" />
-            </Button>
-            <Button className="hidden md:inline-flex">Sign In</Button>
-
             {/* Mobile Menu Button */}
             <Button
               variant="ghost"

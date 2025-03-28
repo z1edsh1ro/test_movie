@@ -7,7 +7,7 @@ interface MovieCardProps {
   image: string;
   genre: string;
   year: string;
-  rating: string;
+  rating: number;
   delay?: number;
 }
 

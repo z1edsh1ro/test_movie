@@ -43,17 +43,6 @@ const Hero = () => {
           <p className="text-base md:text-lg text-gray-300 max-w-xl">
             A captivating journey through enchanted woodlands, where ancient mysteries await those brave enough to venture beyond the treeline.
           </p>
-          
-          <div className="pt-4 flex flex-wrap gap-4">
-            <Button className="group" size="lg">
-              <Play className="mr-2 h-4 w-4 transition-transform group-hover:scale-110" />
-              Watch Now
-            </Button>
-            <Button variant="outline" size="lg" className="bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20">
-              <Info className="mr-2 h-4 w-4" />
-              More Info
-            </Button>
-          </div>
         </motion.div>
       </div>
     </section>

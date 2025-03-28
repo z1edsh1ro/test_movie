@@ -5,9 +5,7 @@ import { AnimatePresence } from "framer-motion";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
-import NotFound from "./pages/NotFound";
-import ManagementPage from "./pages/ManagementPage";
-import OrderPage from "./pages/OrderPage";
+import CartPage from "./pages/CartPage";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -29,9 +27,7 @@ const AppContent = () => {
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<HomePage />} />
-            <Route path="/order" element={<OrderPage />} />
-            <Route path="/mg/" element={<ManagementPage />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="/cart" element={<CartPage />} />
           </Routes>
         </AnimatePresence>
       </main>

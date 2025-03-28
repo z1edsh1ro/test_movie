@@ -1,37 +1,47 @@
 
-import { useEffect } from "react";
 import Hero from "@/components/Hero";
 import MovieSection from "@/components/MovieSection";
-import { featuredMovies, trendingMovies, newReleases } from "@/data/moviesData";
+import { useState } from 'react';
+import { useMovies } from '../hooks/useMovies';
 
 const HomePage = () => {
-  useEffect(() => {
-    document.title = "Cinephile | Home";
-  }, []);
+  const [searchQuery, setSearchQuery] = useState('');
+  const { movies, loading, error } = useMovies(searchQuery);
 
   return (
     <div>
       <Hero />
+
+      <div className="container mx-auto flex">
+        <input
+          type="text"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          placeholder="Search for movies..."
+          className="flex-1 px-4 py-2 mr-8 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+      
+      {loading && (
+        <div className="text-center py-8">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto"></div>
+        </div>
+      )}
+
+      {error && (
+        <div className="text-red-500 text-center py-4">
+          {error}
+        </div>
+      )}
+
+      {!loading && !error && movies.length === 0 && searchQuery && (
+        <div className="text-center py-8 text-gray-500">
+          No movies found for "{searchQuery}"
+        </div>
+      )}
       
       <MovieSection 
-        title="Featured Movies"
-        description="Our selection of must-watch films"
-        movies={featuredMovies}
-        link="/movies"
-      />
-            
-      <MovieSection 
-        title="Trending Now"
-        description="Popular movies this week"
-        movies={trendingMovies}
-        link="/movies"
-      />
-      
-      <MovieSection 
-        title="New Releases"
-        description="The latest movies added to our collection"
-        movies={newReleases}
-        link="/new-releases"
+        movies={movies}
       />
       
     </div>

@@ -1,8 +1,7 @@
 
 import React, { useEffect } from "react";
-import MovieSection from "@/components/MovieSection";
 
-const OrderPage = () => {
+const CartPage = () => {
   useEffect(() => {
     document.title = "Cinephile | TV Shows";
   }, []);
@@ -24,4 +23,4 @@ const OrderPage = () => {
   );
 };
 
-export default OrderPage;
+export default CartPage;
