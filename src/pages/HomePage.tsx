@@ -8,11 +8,13 @@ const HomePage = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const { movies, loading, error } = useMovies(searchQuery);
 
+  console.log(movies);
+
   return (
     <div>
       <Hero />
 
-      <div className="container mx-auto flex">
+      <div className="container mx-auto flex mt-8">
         <input
           type="text"
           value={searchQuery}

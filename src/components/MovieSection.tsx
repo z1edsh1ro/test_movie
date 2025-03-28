@@ -9,12 +9,10 @@ const MovieSection = ({ movies }: Movies) => {
           {movies.map((movie, index) => (
             <MovieCard
               key={movie.id}
-              title={movie.title}
-              image={movie.poster_path}
-              genre={movie.overview}
-              year={movie.release_date}
-              rating={movie.vote_average}
-              delay={index * 0.1}
+              poster_path={movie.poster_path}
+              release_date={movie.release_date}
+              vote_average={movie.vote_average}
+              price={movie.price}
             />
           ))}
         </div>
