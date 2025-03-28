@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
 import CartPage from "./pages/CartPage";
+import { CartProvider } from "./context/CartContext";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -38,8 +39,10 @@ const AppContent = () => {
 
 const App = () => (
   <BrowserRouter>
-    <ScrollToTop />
-    <AppContent />
+    <CartProvider>
+      <ScrollToTop />
+      <AppContent />
+    </CartProvider>
   </BrowserRouter>
 );
 

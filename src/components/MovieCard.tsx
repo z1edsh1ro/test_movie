@@ -1,9 +1,20 @@
 import { motion } from "framer-motion";
-import { Plus, Star } from "lucide-react";
+import { Plus, Star, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Movie } from "@/types/movie";
+import { useCart } from "@/context/CartContext";
+import { useState } from "react";
 
-const MovieCard = ({ title, poster_path, release_date, vote_average, price }: Movie) => {
+const MovieCard = ({ title, poster_path, release_date, vote_average, price, id, overview }: Movie) => {
+  const { addToCart } = useCart();
+  const [isAdded, setIsAdded] = useState(false);
+
+  const handleAddToCart = () => {
+    addToCart({ id, title, poster_path, release_date, vote_average, price, overview });
+    setIsAdded(true);
+    setTimeout(() => setIsAdded(false), 2000);
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -22,8 +33,13 @@ const MovieCard = ({ title, poster_path, release_date, vote_average, price }: Mo
       
       <div className="absolute bottom-0 left-0 w-full p-4 translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
         <div className="flex justify-between items-center mb-2">
-          <Button variant="secondary" size="icon" className="h-8 w-8 rounded-full bg-white/20 backdrop-blur-sm border-white/10 text-white hover:bg-white/30">
-            <Plus className="h-4 w-4" />
+          <Button 
+            variant="secondary" 
+            size="icon" 
+            className={`h-8 w-8 rounded-full backdrop-blur-sm border-white/10 text-white hover:bg-white/30 ${isAdded ? 'bg-green-500' : 'bg-white/20'}`}
+            onClick={handleAddToCart}
+          >
+            {isAdded ? <Check className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
           </Button>
           <div className="flex items-center gap-1 bg-white/20 backdrop-blur-sm px-2 py-1 rounded-full">
             <Star className="h-3 w-3 text-yellow-400 fill-yellow-400" />
