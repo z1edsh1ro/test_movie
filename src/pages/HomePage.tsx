@@ -8,8 +8,6 @@ const HomePage = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const { movies, loading, error } = useMovies(searchQuery);
 
-  console.log(movies);
-
   return (
     <div>
       <Hero />
@@ -43,7 +41,7 @@ const HomePage = () => {
       )}
       
       <MovieSection 
-        movies={movies}
+        movies = {movies}
       />
       
     </div>
